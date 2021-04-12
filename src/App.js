@@ -1,16 +1,14 @@
-// eslint-disable-next-line
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
-import { Auth0Provider } from "@auth0/auth0-react";
 import AuthenticationButton from "./Pages/AuthenticationButton";
+import SignUpButton from "./Components/SignUp";
 function App() {
   return (
-    <Auth0Provider>
-      <Router>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/auth" component={AuthenticationButton} />
-      </Router>
-    </Auth0Provider>
+    <>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/auth" component={AuthenticationButton} />
+      <Route exact path="/signup" component={SignUpButton} />
+    </>
   );
 }
 
