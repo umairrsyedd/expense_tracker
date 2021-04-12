@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+// eslint-disable-next-line
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import { Auth0Provider } from "@auth0/auth0-react";
+import AuthenticationButton from "./Pages/AuthenticationButton";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auth0Provider>
+      <Router>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/auth" component={AuthenticationButton} />
+      </Router>
+    </Auth0Provider>
   );
 }
 
