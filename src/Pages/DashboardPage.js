@@ -4,6 +4,8 @@ import IncomeCategory from "../Components/IncomeCategory";
 import ExpenseCategory from "../Components/ExpenseCategory";
 import IncomeHistory from "../Components/IncomeHistory";
 import ExpenseHistory from "../Components/ExpenseHistory";
+import LogOut from "../Components/LogOut";
+import Logo from "../Assets/Inspensio_Logo_Smaller.png";
 import { Layout, Menu } from "antd";
 import {
   PieChartOutlined,
@@ -76,12 +78,7 @@ export default class DashboardPage extends React.Component {
     return (
       <Layout style={{ minHeight: "100vh" }}>
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-          <div
-            className="logo"
-            style={{ color: "white", padding: "1.5rem", fontSize: "32px" }}
-          >
-            Inpensio
-          </div>
+          <img src={Logo} alt="INPENSIO" style={{}} />
           <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item
               key="1"
@@ -94,34 +91,43 @@ export default class DashboardPage extends React.Component {
               <Menu.Item key="2" onClick={this.showExpenseCategory}>
                 Create Expense
               </Menu.Item>
-              <Menu.Item key="2" onClick={this.showExpenseCategory}>
+              <Menu.Item key="3" onClick={this.showExpenseCategory}>
                 Show Categories
               </Menu.Item>
-              <Menu.Item key="3" onClick={this.showExpenseHistory}>
+              <Menu.Item key="4" onClick={this.showExpenseHistory}>
                 View Expense History
               </Menu.Item>
             </SubMenu>
             <SubMenu key="sub2" icon={<RiseOutlined />} title="Incomes">
-              <Menu.Item key="4" onClick={this.showIncomeCategory}>
+              <Menu.Item key="5" onClick={this.showIncomeCategory}>
                 Create Income
               </Menu.Item>
-              <Menu.Item key="5" onClick={this.showIncomeCategory}>
+              <Menu.Item key="6" onClick={this.showIncomeCategory}>
                 Show Categories
               </Menu.Item>
-              <Menu.Item key="5" onClick={this.showIncomeHistory}>
+              <Menu.Item key="7" onClick={this.showIncomeHistory}>
                 View Income History
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="" title="Transactions" icon={<LineChartOutlined />}>
+            <SubMenu
+              key="sub3"
+              title="Transactions"
+              icon={<LineChartOutlined />}
+            >
               <Menu.Item>View All Transactions</Menu.Item>
             </SubMenu>
-            <Menu.Item key="6" icon={<UserOutlined />}>
+            <Menu.Item key="8" icon={<UserOutlined />}>
               User
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
+          <Header
+            className="site-layout-background"
+            style={{ padding: 0, display: "flex", justifyContent: "flex-end" }}
+          >
+            <LogOut />
+          </Header>
           <Content style={{ margin: "0 16px" }}>{Component}</Content>
           <Footer style={{ textAlign: "center" }}>{this.props.ID}</Footer>
         </Layout>

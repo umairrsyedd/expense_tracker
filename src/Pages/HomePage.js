@@ -1,16 +1,19 @@
 import React from "react";
 import "../Styles/homepageStyles.css";
+import LoginButton from "../Components/Login.js";
+import Logo from "../Assets/Inspensio_Logo_Smaller.png";
 export default class HomePage extends React.Component {
   render() {
     return (
       <>
         <body className="container">
           <div className="landing">
+            <img className="logo" src={Logo} alt="Inpensio" />
             <nav className="nav">
               <ul className="navList">
-                <li>Tech Stack</li>
-                <li>Developer</li>
-                <li>Log In | Register</li>
+                <li className="navItems">Tech Stack</li>
+                <li className="navItems">Developer</li>
+                <li className="navItems">Log In | Register</li>
               </ul>
             </nav>
             <heading className="hero">
@@ -19,7 +22,7 @@ export default class HomePage extends React.Component {
                   Expense Tracker <br />
                   Built with The Mern Stack
                 </h1>
-                <button className="heroButton">Log In | Register </button>
+                <LoginButton />
               </div>
             </heading>
           </div>
