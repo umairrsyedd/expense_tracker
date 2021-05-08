@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col } from "antd";
 import DashboardBalance from "./Balance";
-import DashboardForm from "./Form";
 import DashboardExpenseByCategory from "./ExpenseByCategory";
 import DashboardIncomeByCategory from "./IncomeByCategory";
 import DashboardTransactionDetails from "./TransactionDetails";
@@ -14,11 +13,6 @@ export default class Dashboard extends React.Component {
         <Row>
           <Col span={20} offset={2}>
             <DashboardBalance />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={20} offset={2}>
-            <DashboardForm />
           </Col>
         </Row>
         <Row>

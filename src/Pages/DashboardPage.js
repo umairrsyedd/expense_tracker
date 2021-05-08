@@ -7,8 +7,9 @@ import ExpenseHistory from "../Components/ExpenseHistory";
 import { Layout, Menu } from "antd";
 import {
   PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
+  RiseOutlined,
+  FallOutlined,
+  LineChartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
@@ -78,9 +79,8 @@ export default class DashboardPage extends React.Component {
           <div
             className="logo"
             style={{ color: "white", padding: "1.5rem", fontSize: "32px" }}
-            onClick={this.setProfile}
           >
-            LOGO
+            Inpensio
           </div>
           <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item
@@ -90,23 +90,32 @@ export default class DashboardPage extends React.Component {
             >
               Dashboard
             </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="Expenses">
+            <SubMenu key="sub1" icon={<FallOutlined />} title="Expenses">
               <Menu.Item key="2" onClick={this.showExpenseCategory}>
-                Categories
+                Create Expense
+              </Menu.Item>
+              <Menu.Item key="2" onClick={this.showExpenseCategory}>
+                Show Categories
               </Menu.Item>
               <Menu.Item key="3" onClick={this.showExpenseHistory}>
-                History
+                View Expense History
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Incomes">
+            <SubMenu key="sub2" icon={<RiseOutlined />} title="Incomes">
               <Menu.Item key="4" onClick={this.showIncomeCategory}>
-                Categories
+                Create Income
+              </Menu.Item>
+              <Menu.Item key="5" onClick={this.showIncomeCategory}>
+                Show Categories
               </Menu.Item>
               <Menu.Item key="5" onClick={this.showIncomeHistory}>
-                History
+                View Income History
               </Menu.Item>
             </SubMenu>
-            <Menu.Item key="6" icon={<FileOutlined />}>
+            <SubMenu key="" title="Transactions" icon={<LineChartOutlined />}>
+              <Menu.Item>View All Transactions</Menu.Item>
+            </SubMenu>
+            <Menu.Item key="6" icon={<UserOutlined />}>
               User
             </Menu.Item>
           </Menu>

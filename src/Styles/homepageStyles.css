@@ -1,0 +1,86 @@
+:root {
+  --primary: #001529;
+  --secondary: #002140;
+  --focus: #278cf3;
+  --text: #ffffff;
+}
+
+.container {
+  font-family: Montserrat;
+  background-color: #ffffff;
+  color: var(--text);
+}
+.landing {
+  background-color: var(--primary);
+}
+.nav {
+  width: 60vw;
+  height: 10vh;
+  margin-left: 30vw;
+  background-color: var(--secondary);
+}
+.navList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+li {
+  font-size: 1rem;
+  padding: 0.8rem;
+}
+li:hover {
+  background-color: var(--focus);
+}
+.hero {
+  width: 70vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heroHeading {
+  font-size: 3rem;
+  color: var(--text);
+}
+.heroText {
+  width: 75%;
+}
+.heroButton {
+  padding: 10px;
+  border: none;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: var(--focus);
+  color: var(--text);
+}
+.heroButton:hover {
+  background-color: var(--secondary);
+}
+.featuresContainer {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 80vh;
+}
+.sectionHeading {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+}
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.featureCards {
+  height: 200px;
+  width: 300px;
+  background-color: var(--secondary);
+  margin: 5px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
