@@ -31,7 +31,7 @@ export default class DashboardExpenseByCategory extends Component {
           <ul>
             {Expenses.map((value, index) => {
               return (
-                <li>
+                <li key={value._id}>
                   {value.Category}:{value.Name}:{value.Amount}
                 </li>
               );

@@ -18,7 +18,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-
+import { UserContext } from "../Auth/UserContext";
 const { Header, Footer } = Layout;
 const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -33,8 +33,8 @@ export default class DashboardPage extends React.Component {
     this.onCollapse = this.onCollapse.bind(this);
     this.showComponent = this.showComponent.bind(this);
   }
+  static contextType = UserContext; //assign context to component
   onCollapse = (collapsed) => {
-    console.log(collapsed);
     this.setState({ collapsed });
   };
   showComponent(component) {
@@ -166,7 +166,11 @@ export default class DashboardPage extends React.Component {
         <Layout className="site-layout">
           <Header
             className="site-layout-background"
-            style={{ padding: 0, display: "flex", justifyContent: "flex-end" }}
+            style={{
+              padding: 0,
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
           >
             <LogOut />
           </Header>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { UserContext } from "../Auth/UserContext";
 export default class ExpenseHistory extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +8,7 @@ export default class ExpenseHistory extends Component {
       Expenses: [],
     };
   }
-
+  static contextType = UserContext;
   componentDidMount() {
     fetch("http://localhost:6500/Expense?ID=607bbb07e1ebb63a3033af15")
       .then((res) => {
@@ -25,7 +25,7 @@ export default class ExpenseHistory extends Component {
       <ul>
         {allExpenses.map((value, index) => {
           return (
-            <li>
+            <li key={value._id}>
               {value.Category} : {value.Name} : {value.Amount} : {value.Note}
             </li>
           );

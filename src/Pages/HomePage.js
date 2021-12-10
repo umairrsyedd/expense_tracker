@@ -6,7 +6,7 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <>
-        <body className="container">
+        <div className="container">
           <div className="landing">
             <img className="logo" src={Logo} alt="Inpensio" />
             <nav className="nav">
@@ -16,7 +16,7 @@ export default class HomePage extends React.Component {
                 <li className="navItems">Log In | Register</li>
               </ul>
             </nav>
-            <heading className="hero">
+            <header className="hero">
               <div className="heroText">
                 <h1 className="heroHeading">
                   Expense Tracker <br />
@@ -24,7 +24,7 @@ export default class HomePage extends React.Component {
                 </h1>
                 <LoginButton />
               </div>
-            </heading>
+            </header>
           </div>
           <section className="featuresContainer">
             <h2 className="sectionHeading"> Tech Stack </h2>
@@ -37,7 +37,7 @@ export default class HomePage extends React.Component {
               <div className="featureCards">Context API State Management</div>
             </div>
           </section>
-        </body>
+        </div>
       </>
     );
   }

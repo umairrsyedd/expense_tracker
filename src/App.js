@@ -7,11 +7,17 @@ import AuthenticationButton from "./Pages/AuthenticationButton";
 import SignUpButton from "./Components/SignUp";
 import DashboardPage from "./Pages/DashboardPage";
 import ProtectedRoute from "./Auth/Protected_Route";
+import { UserProvider } from "./Auth/UserContext";
 function App() {
   return (
     <>
       <Route exact path="/" component={HomePage} />
-      <ProtectedRoute path="/dashboard" component={DashboardPage} />
+      <UserProvider>
+        <ProtectedRoute
+          path="/dashboard"
+          component={DashboardPage}
+        ></ProtectedRoute>
+      </UserProvider>
     </>
   );
 }

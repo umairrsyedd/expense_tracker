@@ -4,9 +4,13 @@ import DashboardBalance from "./Balance";
 import DashboardExpenseByCategory from "./ExpenseByCategory";
 import DashboardIncomeByCategory from "./IncomeByCategory";
 import DashboardTransactionDetails from "./TransactionDetails";
+import { UserContext } from "../Auth/UserContext";
 export default class Dashboard extends React.Component {
-  state = {};
-
+  constructor(props) {
+    super(props);
+    this.state = { loaded: false };
+  }
+  static contextType = UserContext;
   render() {
     return (
       <>
@@ -28,6 +32,7 @@ export default class Dashboard extends React.Component {
             <DashboardTransactionDetails />
           </Col>
         </Row>
+        <h2>{this.context} </h2>
       </>
     );
   }

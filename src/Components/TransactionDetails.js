@@ -37,12 +37,10 @@ export default class DashboardTransactionDetails extends Component {
             <ul>
               {data.map((value, index) => {
                 return (
-                  <>
-                    <li>
-                      {value.TransactionName} : {value.TransactionType} :
-                      {value.CurrentBalance}
-                    </li>
-                  </>
+                  <li key={value._id}>
+                    {value.TransactionName} : {value.TransactionType} :
+                    {value.CurrentBalance}
+                  </li>
                 );
               })}
             </ul>

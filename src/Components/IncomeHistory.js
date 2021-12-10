@@ -23,7 +23,7 @@ export default class IncomeHistory extends Component {
       <ul>
         {allIncomes.map((value, index) => {
           return (
-            <li>
+            <li key={value._id}>
               {value.Category}:{value.Name}:{value.Amount}:{value.Amount}
             </li>
           );

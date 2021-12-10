@@ -31,7 +31,7 @@ export default class DashboardIncomeByCategory extends Component {
           <ul>
             {Incomes.map((value, index) => {
               return (
-                <li>
+                <li key={value._id}>
                   {value.Category}:{value.Name}:{value.Amount}
                 </li>
               );
